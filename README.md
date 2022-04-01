@@ -18,6 +18,11 @@ tar -xvf archive.tar
 ```
 used to exctrat files commonly present in CTFs programs
 
+## Verifying SHA256 checksum in linux
+```bash
+sha256sum <filename>
+```
+
 ### Explaining /dev/null command in CTFs and privilege escalation techniques
 ```bash
 <code here> 2>/dev/null
