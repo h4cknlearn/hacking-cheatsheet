@@ -40,5 +40,22 @@ So that's why 2>/dev/null is used to drop errors inside the Linux system's black
 sudo kill <pid> 
 ```
 
+## Anonymous login
+```bash
+ftp <target ip address>
+username: anonymous
+password: [enter key]
+```
+
+## smbclient
+```bash
+# connects to the target listing all the shared documents
+smbclient -N -L \\\\target ip\\ # -N supress the password prompt
+smbclient -N \\\\target ip\\openshares
+
+get <file> # downloads the file
+more <file> # outputs the content file without the needing to download 
+# in our local machine
+```
 
 
