@@ -1,5 +1,7 @@
 # hacking-cheatsheet
-A hacking cheat sheet to help you cover all the basic needs
+📑 _A hacking cheat sheet to help you cover all the basic needs_
+
+_ps: i'll be updating this cheat sheet every week_
 
 
 ## Simple file transfering using SFTP
@@ -8,7 +10,7 @@ sftp user@remoteip
 sftp > put file
 ```
 
-that's all we need to transfer files from local machine to remote servers
+that's all we need to transfer files from local machine to remote servers as easy as possible
 
 ## Extracting tar files
 ```bash
