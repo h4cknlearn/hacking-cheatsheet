@@ -40,6 +40,16 @@ So that's why 2>/dev/null is used to drop errors inside the Linux system's black
 sudo kill <pid> 
 ```
 
+## Using a simple SOCKS Proxy
+```bash
+ssh <remoteip> -l <username> -D 127.0.0.1:1080
+# -D enables socks proxy binding our machine's traffic with the remote one
+```
+We can use it along Burp Suite to forward all the VPS's traffic through our local machine
+using the burp's proxy on the local browser at the same time
+
+`ps: here you will need to configure burp as well`
+
 ## Anonymous login
 ```bash
 ftp <target ip address>
@@ -58,4 +68,16 @@ more <file> # outputs the content file without the needing to download
 # in our local machine
 ```
 
+## User enum and permissions
+```bash
+sudo -l # checks which commands we can execute on the system
+id # checks users permissions
 
+find / -group <groupname> 2>/dev//null # to find a specific group name
+```
+
+## Upgrading our shell
+```bash 
+python -c 'import pty; pty.spawn("/bin/bash")'
+# here pty module let's us spawn a pseudo terminal
+```
