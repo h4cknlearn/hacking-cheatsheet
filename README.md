@@ -22,6 +22,7 @@ used to exctrat files commonly present in CTFs programs
 ```bash
 sha256sum <filename>
 ```
+`ps: we can compare the checksum with the sums file (in case you download it) using -c flag`
 
 ### Explaining /dev/null command in CTFs and privilege escalation techniques
 ```bash
